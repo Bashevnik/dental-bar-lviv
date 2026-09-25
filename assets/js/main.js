@@ -11,10 +11,10 @@
 
   /* ---------- brand logo slot: show uploaded logo if present, else default lockup ---------- */
   $$('.brand-img').forEach(img => {
-    const lockup = img.parentElement.querySelector('.brand-lockup');
-    img.addEventListener('load', () => { img.hidden = false; if (lockup) lockup.hidden = true; });
-    img.addEventListener('error', () => { img.hidden = true; if (lockup) lockup.hidden = false; });
-    if (img.complete && img.naturalWidth > 0) { img.hidden = false; if (lockup) lockup.hidden = true; }
+    const box = img.closest('.hdr__logo, .ft__logo');
+    const mark = () => { if (box && img.naturalWidth > 0) box.classList.add('has-logo'); };
+    img.addEventListener('load', mark);
+    if (img.complete) mark();
   });
 
   /* ---------- year ---------- */
