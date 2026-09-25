@@ -189,7 +189,7 @@
   requestAnimationFrame(heroIn);
 
   // generic reveal on scroll
-  $$('.sec-head, .svc-head, .about__lead, .about__pillars li, .space__caption, .doc, .stat, .band__head, .prices__aside, .acc, .contacts__left, .bform').forEach(el => {
+  $$('.sec-head, .svc-head, .about__lead, .about__pillars li, .doc, .stat, .band__head, .prices__aside, .acc, .contacts__left, .bform').forEach(el => {
     gsap.from(el, { y: 46, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } });
   });
 

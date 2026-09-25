@@ -3,17 +3,17 @@
    Type: Playfair Display (display) + Golos Text (body/UI)
    ============================================================ */
 :root{
-  --bg:#F5F2F7;
-  --bg-2:#ECE7F2;
+  --bg:#F4F1EA;
+  --bg-2:#E9E5DA;
   --surface:#FFFFFF;
-  --ink:#1B1720;
-  --muted:#6E6875;
-  --line:rgba(27,23,32,.12);
-  --line-2:rgba(27,23,32,.20);
-  --lav:#6B4FD0;
-  --lav-soft:#EAE3FA;
-  --pink:#D98BAE;
-  --lav-deep:#6B4FD0;
+  --ink:#15201A;
+  --muted:#5F6A61;
+  --line:rgba(21,32,26,.12);
+  --line-2:rgba(21,32,26,.20);
+  --lav:#2E6B57;
+  --lav-soft:#DCE7E0;
+  --pink:#B4885C;
+  --lav-deep:#255A49;
   --r:18px;
   --ease:cubic-bezier(.22,1,.36,1);
   --pad:clamp(20px,5vw,90px);
@@ -64,12 +64,12 @@ h1,h2,h3{font-family:var(--font-d);font-weight:800;line-height:1.02;letter-spaci
   padding:18px var(--pad);
   transition:background .4s,backdrop-filter .4s,border-color .4s,padding .4s;
   border-bottom:1px solid transparent}
-.hdr.is-scrolled{background:rgba(245,242,247,.82);backdrop-filter:blur(16px);
+.hdr.is-scrolled{background:rgba(244,241,234,.86);backdrop-filter:blur(16px);
   border-bottom-color:var(--line);padding-top:12px;padding-bottom:12px}
 .hdr__logo{font-family:var(--font-d);font-weight:800;font-size:22px;letter-spacing:0;
   display:flex;align-items:center;gap:11px}
 .brandmark{width:34px;height:34px;border-radius:10px;background:var(--lav);
-  display:grid;place-items:center;flex:none;box-shadow:0 6px 16px rgba(107,79,208,.28)}
+  display:grid;place-items:center;flex:none;box-shadow:0 6px 16px rgba(46,107,87,.26)}
 .brandmark svg{width:22px;height:22px}
 .hdr__nav{display:flex;gap:30px;margin-left:auto;font-size:15px;font-weight:500}
 .hdr__nav a{color:var(--muted);position:relative;transition:color .3s}
@@ -131,7 +131,7 @@ body.menu-open .mmenu{opacity:1;visibility:visible;transform:none}
 .hero__media img{width:100%;height:100%;object-fit:cover}
 .hero__badge{position:absolute;left:-14px;bottom:26px;background:var(--lav);color:#fff;
   border-radius:16px;padding:14px 18px;display:flex;flex-direction:column;line-height:1.15;
-  box-shadow:0 20px 50px rgba(107,79,208,.28)}
+  box-shadow:0 20px 50px rgba(46,107,87,.26)}
 .hero__badge-big{font-family:var(--font-d);font-weight:800;font-size:19px}
 .hero__badge span:last-child{font-size:13px;font-weight:500;font-family:var(--font-b)}
 
@@ -165,16 +165,6 @@ body.menu-open .mmenu{opacity:1;visibility:visible;transform:none}
 .p-ico svg{width:24px;height:24px}
 .about__pillars b{display:block;font-family:var(--font-d);font-weight:700;font-size:17px;margin-bottom:4px}
 .about__pillars span{color:var(--muted);font-size:14.5px;line-height:1.5}
-
-/* ---- clinic space (immersive Pexels) ---- */
-.space{position:relative;padding:0 var(--pad) clamp(40px,7vw,90px)}
-.space__img{position:relative;overflow:hidden;border-radius:var(--r);aspect-ratio:16/9;max-height:70vh}
-.space__img img{width:100%;height:100%;object-fit:cover}
-.space__caption{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;
-  margin-top:26px;max-width:840px}
-.space__caption .kicker{padding-top:6px}
-.space__text{font-family:var(--font-d);font-weight:600;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.25}
-.space__text em{font-style:italic;color:var(--lav)}
 
 /* ============================================================
    03 · SERVICES  (visual navigation + hover/tap image)
@@ -322,7 +312,7 @@ body.menu-open .mmenu{opacity:1;visibility:visible;transform:none}
 /* sticky mobile CTA */
 .sticky-cta{position:fixed;left:16px;right:16px;bottom:16px;z-index:70;display:none;font-family:var(--font-b);
   background:var(--lav);color:#fff;border-radius:40px;padding:16px;font-weight:600;
-  box-shadow:0 16px 40px rgba(107,79,208,.35)}
+  box-shadow:0 16px 40px rgba(46,107,87,.32)}
 
 /* ---------- modal ---------- */
 .modal{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:20px;
@@ -373,7 +363,6 @@ body.menu-open .mmenu{opacity:1;visibility:visible;transform:none}
   .proof__grid{grid-template-columns:1fr 1fr}
   .stat--wide{grid-column:span 2}
   .contacts__list li{grid-template-columns:1fr}
-  .space__caption{grid-template-columns:1fr;gap:14px}
 }
 @media(prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
