@@ -72,6 +72,10 @@ h1,h2,h3{font-family:var(--font-d);font-weight:800;line-height:1.02;letter-spaci
 .brandmark{width:34px;height:34px;border-radius:10px;background:var(--lav);
   display:grid;place-items:center;flex:none;box-shadow:0 6px 16px rgba(46,107,87,.26)}
 .brandmark svg{width:22px;height:22px}
+.brand-lockup{display:inline-flex;align-items:center;gap:11px}
+.hdr__logo .brand-img{height:34px;width:auto;max-width:200px;display:block;object-fit:contain}
+.ft__logo{display:inline-flex;align-items:center}
+.ft__logo .brand-img{height:clamp(40px,7vw,64px);width:auto;max-width:320px;display:block;object-fit:contain}
 .hdr__nav{display:flex;gap:30px;margin-left:auto;font-size:15px;font-weight:500}
 .hdr__nav a{color:var(--muted);position:relative;transition:color .3s}
 .hdr__nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--lav);transition:width .3s var(--ease)}

@@ -9,6 +9,14 @@
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
+  /* ---------- brand logo slot: show uploaded logo if present, else default lockup ---------- */
+  $$('.brand-img').forEach(img => {
+    const lockup = img.parentElement.querySelector('.brand-lockup');
+    img.addEventListener('load', () => { img.hidden = false; if (lockup) lockup.hidden = true; });
+    img.addEventListener('error', () => { img.hidden = true; if (lockup) lockup.hidden = false; });
+    if (img.complete && img.naturalWidth > 0) { img.hidden = false; if (lockup) lockup.hidden = true; }
+  });
+
   /* ---------- year ---------- */
   const yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
 
