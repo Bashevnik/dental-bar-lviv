@@ -76,9 +76,9 @@ h1,h2,h3{font-family:var(--font-d);font-weight:800;line-height:1.02;letter-spaci
 .brand-img{display:none;width:auto;object-fit:contain}
 .hdr__logo{display:inline-flex;align-items:center}
 .ft__logo{display:inline-flex;align-items:center}
-.hdr__logo.has-logo .brand-img{display:block;height:50px;max-width:230px}
+.hdr__logo.has-logo .brand-img{display:block;height:120px;max-width:440px}
 .hdr__logo.has-logo .brand-lockup{display:none}
-.ft__logo.has-logo .brand-img{display:block;height:clamp(54px,8.5vw,88px);max-width:340px}
+.ft__logo.has-logo .brand-img{display:block;height:120px;max-width:460px}
 .ft__logo.has-logo .brand-lockup{display:none}
 .hdr__nav{display:flex;gap:30px;margin-left:auto;font-size:15px;font-weight:500}
 .hdr__nav a{color:var(--muted);position:relative;transition:color .3s}
