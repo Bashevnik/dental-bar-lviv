@@ -174,7 +174,8 @@
   /* ============================================================
      MOTION (GSAP) — one language: reveal · stagger · parallax
      ============================================================ */
-  if (!hasGSAP || RM) { document.body.classList.add('no-motion'); return; }
+  const reveal = () => document.body.classList.add('ready');
+  if (!hasGSAP || RM) { document.body.classList.add('no-motion'); reveal(); return; }
   const { gsap } = window; gsap.registerPlugin(window.ScrollTrigger);
 
   // wrap hero title lines for masked reveal
@@ -183,14 +184,19 @@
     inner.className = 'inner'; inner.style.display = 'block';
     inner.innerHTML = line.innerHTML; line.innerHTML = ''; line.appendChild(inner);
   });
+  // pre-hide hero pieces BEFORE first paint so the page fades in with no flash
   gsap.set('[data-reveal-line] .inner', { yPercent: 115 });
+  gsap.set('.hero .kicker', { opacity: 0, y: 16 });
+  gsap.set('.hero__lead,.hero__actions,.hero__trust', { opacity: 0, y: 24 });
+  gsap.set('.hero__media', { opacity: 0, y: 36 });
 
   // hero intro — runs immediately (no preloader gate)
   const heroIn = () => {
+    reveal();
     gsap.to('[data-reveal-line] .inner', { yPercent: 0, duration: 1.1, ease: 'power4.out', stagger: .09, delay: .05 });
-    gsap.from('.hero .kicker', { opacity: 0, y: 16, duration: .7, ease: 'power3.out' });
-    gsap.from('.hero__lead,.hero__actions,.hero__trust', { y: 24, opacity: 0, duration: .9, ease: 'power3.out', stagger: .08, delay: .4 });
-    gsap.from('.hero__media', { y: 36, opacity: 0, duration: 1.1, ease: 'power3.out', delay: .25 });
+    gsap.to('.hero .kicker', { opacity: 1, y: 0, duration: .7, ease: 'power3.out' });
+    gsap.to('.hero__lead,.hero__actions,.hero__trust', { opacity: 1, y: 0, duration: .9, ease: 'power3.out', stagger: .08, delay: .4 });
+    gsap.to('.hero__media', { opacity: 1, y: 0, duration: 1.1, ease: 'power3.out', delay: .25 });
     const heroFig = $('.hero__media .reveal-img');
     if (heroFig) gsap.fromTo(heroFig, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.3, ease: 'power4.out', delay: .35 });
   };
